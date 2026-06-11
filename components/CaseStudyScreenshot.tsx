@@ -482,7 +482,7 @@ export default function CaseStudyScreenshot({ domainTag, title = "", className =
         <text x="160" y="262" fontSize="12" fill="white" textAnchor="middle" fontWeight="bold">Choose File</text>
 
         {/* Analysis results */}
-        <rect x="40" y="280" width="350" height="220" fill="white" border="1px solid #d1d5db" rx="8" />
+        <rect x="40" y="280" width="350" height="220" fill="white" stroke="#d1d5db" strokeWidth="1" rx="8" />
         <text x="60" y="305" fontSize="12" fontWeight="bold" fill="#333">Distribution Analysis</text>
         <line x1="50" y1="320" x2="380" y2="320" stroke="#e5e7eb" strokeWidth="1" />
 
@@ -496,7 +496,7 @@ export default function CaseStudyScreenshot({ domainTag, title = "", className =
         <rect x="300" y="330" width="30" height="110" fill="#6b7280" opacity="0.65" />
 
         {/* Query section */}
-        <rect x="410" y="280" width="350" height="220" fill="white" border="1px solid #d1d5db" rx="8" />
+        <rect x="410" y="280" width="350" height="220" fill="white" stroke="#d1d5db" strokeWidth="1" rx="8" />
         <text x="430" y="305" fontSize="12" fontWeight="bold" fill="#333">Ask Questions</text>
         <line x1="420" y1="320" x2="750" y2="320" stroke="#e5e7eb" strokeWidth="1" />
 
