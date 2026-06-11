@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  background: #2742f5;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.wrap {
+  @apply mx-auto max-w-wrap px-5 sm:px-8;
+}
+
+.eyebrow {
+  @apply font-mono text-[11px] tracking-[0.18em] uppercase text-muted;
+}
+
+.dossier-line {
+  @apply font-mono text-[11px] tracking-wide text-muted;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-cobalt text-white font-semibold px-6 py-3 rounded-md
+    transition-all duration-200 hover:bg-cobaltDark hover:shadow-cardHover
+    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 border border-line bg-surface text-ink font-semibold px-6 py-3 rounded-md
+    transition-all duration-200 hover:border-ink
+    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt;
+}
+
+input,
+textarea,
+select {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-cobalt;
+}
