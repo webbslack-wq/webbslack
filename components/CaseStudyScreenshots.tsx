@@ -207,7 +207,7 @@ export function getScreenshots(domainTag: string): JSX.Element[] {
         {/* Quick actions */}
         <text x="20" y="175" fontSize="12" fontWeight="bold" fill="#333">Quick Transfer</text>
 
-        <rect x="15" y="190" width="80" height="70" fill="white" stroke="#e0e0e0" rx="8" rx="6" strokeWidth="1" />
+        <rect x="15" y="190" width="80" height="70" fill="white" stroke="#e0e0e0" rx="6" strokeWidth="1" />
         <circle cx="55" cy="210" r="16" fill="#10b981" opacity="0.2" />
         <text x="55" y="215" fontSize="14" textAnchor="middle">📤</text>
         <text x="55" y="250" fontSize="9" textAnchor="middle" fontWeight="bold" fill="#333">Send</text>
