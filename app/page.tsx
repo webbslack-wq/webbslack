@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import AgentDemo from "@/components/AgentDemo";
 
 export default function HomePage() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -109,7 +110,7 @@ export default function HomePage() {
               </h1>
 
               <p className="text-xl md:text-2xl text-gray-400 max-w-2xl font-light leading-relaxed">
-                Full-stack architect designing systems that power millions. From React to Kubernetes, we ship production-grade software that scales.
+                Full-stack architect designing systems that power millions. From React to Kubernetes, we ship production-grade software that scales. Every build ships with an AI agent your team can use to update the site in plain language.
               </p>
             </div>
 
@@ -225,6 +226,90 @@ export default function HomePage() {
         <div className="absolute top-40 left-10 w-24 h-24 border border-orange-500/20 rounded-2xl" style={{ animation: "float 6s ease-in-out infinite 1s" }} />
       </section>
 
+      {/* Flagship - Ships with an AI Agent */}
+      <section className="relative py-24 md:py-32 bg-inkDeep border-y border-white/10 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 left-1/3 w-96 h-96 bg-cobalt/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="wrap relative z-10">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center mb-16">
+            {/* Copy */}
+            <div>
+              <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-white/40 mb-6">
+                flagship · every build includes this
+              </p>
+              <h2 className="font-display text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.05] mb-6">
+                Your website ships with its own AI agent.
+              </h2>
+              <p className="text-lg text-white/70 max-w-2xl leading-relaxed mb-8">
+                After launch, you get an admin dashboard with a chat box. Type
+                what you want changed — &ldquo;update the menu prices&rdquo;,
+                &ldquo;swap the banner photo&rdquo;, &ldquo;add a new team
+                member&rdquo; — and the agent makes the change, shows you a
+                preview, and you approve it to go live. No developer ticket, no
+                waiting, no hourly charges for minor edits.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/services#ai-agent" className="btn-primary cursor-none">
+                  See how it works
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 border border-white/20 bg-transparent text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt cursor-none"
+                >
+                  Request a callback
+                </Link>
+              </div>
+            </div>
+
+            {/* Chat mock */}
+            <AgentDemo />
+          </div>
+
+          {/* Value points */}
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+              <h3 className="font-display text-lg font-bold text-white mb-3">
+                No more change requests
+              </h3>
+              <p className="text-sm text-white/70 leading-relaxed flex-1 mb-5">
+                Minor edits stop costing money and days. You handle text,
+                images, prices and hours yourself, in plain language.
+              </p>
+              <p className="font-mono text-[11px] tracking-wide text-white/40">
+                text · images · prices · hours
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+              <h3 className="font-display text-lg font-bold text-white mb-3">
+                Works with your existing website
+              </h3>
+              <p className="text-sm text-white/70 leading-relaxed flex-1 mb-5">
+                The agent integrates into sites built on any stack — WordPress,
+                PHP, React, Shopify, anything in a git repo. No rebuild
+                required.
+              </p>
+              <p className="font-mono text-[11px] tracking-wide text-white/40">
+                any stack · git-based
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
+              <h3 className="font-display text-lg font-bold text-white mb-3">
+                You stay in control
+              </h3>
+              <p className="text-sm text-white/70 leading-relaxed flex-1 mb-5">
+                Every change shows a live preview first; nothing goes live
+                without your approval. Full audit log of who changed what.
+              </p>
+              <p className="font-mono text-[11px] tracking-wide text-white/40">
+                preview → approve → live · audit log included
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Expertise Section - Modern cards with glassmorphism */}
       <section className="relative py-32 md:py-48 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900">
         <div className="absolute inset-0 overflow-hidden">
@@ -240,7 +325,26 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-wrap mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-wrap mx-auto">
+            {/* Card 0 - AI Agent */}
+            <div className="group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-cobalt/15 to-white/5 border border-cobalt/40 hover:border-cobalt/70 transition-all duration-500 hover:shadow-2xl hover:shadow-cobalt/20 backdrop-blur-xl cursor-none">
+              <div className="absolute inset-0 bg-gradient-to-br from-cobalt/0 to-cobalt/0 group-hover:from-cobalt/10 group-hover:to-cobalt/5 transition-all duration-500" />
+              <div className="relative">
+                <div className="w-14 h-14 bg-gradient-to-br from-cobalt to-cobaltDark rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+                  </svg>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-white mb-3">AI Agent for Your Site</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  A chat-based agent embedded into new or existing sites. Your team makes changes in plain language; every change is previewed before it goes live.
+                </p>
+                <p className="font-mono text-[11px] tracking-wide text-gray-500">
+                  embedded · any stack · preview-gated
+                </p>
+              </div>
+            </div>
+
             {/* Card 1 */}
             <div className="group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 hover:border-cobalt/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cobalt/20 backdrop-blur-xl cursor-none">
               <div className="absolute inset-0 bg-gradient-to-br from-cobalt/0 to-cobalt/0 group-hover:from-cobalt/10 group-hover:to-cobalt/5 transition-all duration-500" />
@@ -265,7 +369,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2 */}
-            <div className="group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 hover:border-cobalt/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cobalt/20 backdrop-blur-xl cursor-none md:mt-12">
+            <div className="group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 hover:border-cobalt/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cobalt/20 backdrop-blur-xl cursor-none">
               <div className="absolute inset-0 bg-gradient-to-br from-cobalt/0 to-cobalt/0 group-hover:from-cobalt/10 group-hover:to-cobalt/5 transition-all duration-500" />
               <div className="relative">
                 <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">

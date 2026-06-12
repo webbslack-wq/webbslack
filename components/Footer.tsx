@@ -10,8 +10,8 @@ export default function Footer() {
             full-stack architect
           </p>
           <p className="mt-4 text-sm text-gray-400 max-w-xs leading-relaxed">
-            Websites, platforms and infrastructure for businesses that need things
-            built properly — and kept running at scale.
+            Websites, platforms and infrastructure — every build ships with an
+            AI agent your team can use to update the site in plain language.
           </p>
         </div>
 

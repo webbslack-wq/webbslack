@@ -1,6 +1,32 @@
 import Link from "next/link";
 
-const tiers = [
+type Tier = {
+  id?: string;
+  flagship?: boolean;
+  name: string;
+  who: string;
+  items: string[];
+  mono: string;
+  color: string;
+};
+
+const tiers: Tier[] = [
+  {
+    id: "ai-agent",
+    flagship: true,
+    name: "AI Agent Integration",
+    who: "New builds (included) · existing websites on any stack (retrofit)",
+    items: [
+      "Chat-based admin panel embedded in your dashboard",
+      "Make site changes in plain language — text, images, pricing, pages",
+      "Preview-and-approve flow: nothing goes live without your sign-off",
+      "Works with your current website — WordPress, PHP, React, any stack",
+      "Customisable permissions: control exactly what the agent can touch",
+      "Audit log of every change, with one-click rollback",
+    ],
+    mono: "claude-powered · sandboxed · git-native",
+    color: "cobalt",
+  },
   {
     name: "Business Website",
     who: "Restaurants, salons, clinics, local services",
@@ -59,7 +85,7 @@ export default function ServicesPage() {
               Build it. Ship it. Scale it.
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
-              Three ways to work together — from a first website to a full product team of one. Every engagement starts with a written proposal.
+              Four ways to work together — from a first website to a full product team of one, with an AI agent included in every build. Every engagement starts with a written proposal.
             </p>
           </div>
         </div>
@@ -68,15 +94,24 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-20 md:py-28 bg-slate-950">
         <div className="wrap">
-          <div className="grid gap-6 lg:grid-cols-3 mb-20">
+          <div className="grid gap-6 lg:grid-cols-2 mb-20">
             {tiers.map((t, i) => (
               <div
                 key={t.name}
-                className="group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-xl backdrop-blur-xl flex flex-col"
+                id={t.id}
+                className={`group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br backdrop-blur-xl flex flex-col scroll-mt-28 transition-all duration-300 hover:shadow-xl ${
+                  t.flagship
+                    ? "from-cobalt/15 to-white/5 border border-cobalt/50 hover:border-cobalt/80"
+                    : "from-white/10 to-white/5 border border-white/10 hover:border-white/30"
+                }`}
               >
                 <div className="mb-6">
                   <div className="inline-flex items-center gap-2 mb-4">
-                    <span className="text-cobalt text-xs font-bold">TIER {i + 1}</span>
+                    {t.flagship ? (
+                      <span className="font-mono text-[10px] tracking-[0.18em] text-white bg-cobalt px-2 py-0.5 rounded">FLAGSHIP</span>
+                    ) : (
+                      <span className="text-cobalt text-xs font-bold">TIER {i}</span>
+                    )}
                     <span className="text-xs text-gray-500">{t.mono}</span>
                   </div>
                   <h2 className="font-display text-2xl font-bold text-white">{t.name}</h2>
@@ -106,6 +141,7 @@ export default function ServicesPage() {
             <p className="text-cobalt text-lg font-bold mb-8">STRAIGHT ANSWERS</p>
             <div className="space-y-4">
               {[
+                ["Is the AI agent safe? Can it break my site?", "No. The agent works in an isolated copy of your site, and every change must pass an automated build check before you see it. You review a preview and approve it before anything goes live — failed or rejected changes never reach the real website, and any published change can be rolled back in one click."],
                 ["How does pricing work?", "Fixed price for defined scopes (websites, specific features), or a monthly retainer for ongoing work. You'll always know the number before anything starts — it's in the proposal."],
                 ["How long does a business website take?", "Typically 3–6 weeks from kickoff to launch, depending on booking/ordering complexity. Platform builds are scoped individually."],
                 ["Do you maintain what you build?", "Yes — and we prefer to. A site is a living thing: hours change, menus change, security patches land. Retainers cover all of it."],

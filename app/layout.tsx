@@ -19,7 +19,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "webbslack — Full Stack Technical Lead | React · Next.js · Node · DevOps",
   description:
-    "15+ years building web platforms, fintech systems, blockchain products and cloud infrastructure. Designing resilient systems at scale.",
+    "15+ years building web platforms, fintech systems, blockchain products and cloud infrastructure. Every build ships with an embedded AI agent — clients update their own site in plain language, with preview-and-approve safety.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -107,6 +107,7 @@ export default function ContactPage() {
                       className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-cobalt/50 focus:outline-none transition-all"
                     >
                       <option value="" className="bg-slate-900">Choose one…</option>
+                      <option className="bg-slate-900">Add AI agent to my existing website</option>
                       <option className="bg-slate-900">Restaurant / Café / Food</option>
                       <option className="bg-slate-900">Salon / Spa / Wellness</option>
                       <option className="bg-slate-900">Clinic / Healthcare</option>
